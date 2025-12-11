@@ -1,0 +1,218 @@
+/* ----------------------------------------------------
+   FONT & WARNA NUSANTARA (Ringan)
+---------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@300;400;600;700&display=swap');
+
+:root {
+    --merah: #c1121f;
+    --emas: #f2c94c;
+    --hitam: #1b1b1b;
+    --putih: #ffffff;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lora', serif;
+    background: var(--hitam);
+    color: var(--putih);
+    overflow-x: hidden;
+}
+
+/* ----------------------------------------------------
+   BACKGROUND BATIK – RINGAN
+---------------------------------------------------- */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("asset/batik-nusantara.png") repeat;
+    opacity: 0.15;
+    animation: shimmer 12s linear infinite;
+    z-index: -2;
+}
+
+@keyframes shimmer {
+    0% { opacity: 0.13; }
+    50% { opacity: 0.20; }
+    100% { opacity: 0.13; }
+}
+
+/* ----------------------------------------------------
+   HEADER – BACKGROUND ALAM + ANIMASI BERGERAK
+---------------------------------------------------- */
+header {
+    position: relative;
+    text-align: center;
+    padding: 120px 25px;
+
+    /* GAMBAR KEINDAHAN ALAM INDONESIA */
+    background-image: url("https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* ANIMASI GERAK PELAN (parallax lembut) */
+    animation: bgMove 18s ease-in-out infinite alternate;
+
+    border-bottom: 4px solid var(--emas);
+}
+
+@keyframes bgMove {
+    0% { background-position: center; }
+    50% { background-position: center 20%; }
+    100% { background-position: center 40%; }
+}
+
+/* Overlay gelap */
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+
+/* ----------------------------------------------------
+   JUDUL – GLOW RINGAN
+---------------------------------------------------- */
+header h1 {
+    position: relative;
+    font-size: 3.3rem;
+    letter-spacing: 1.8px;
+    color: var(--putih);
+    z-index: 2;
+
+    animation: glowLite 3s ease-in-out infinite alternate;
+}
+
+@keyframes glowLite {
+    0% { text-shadow: 0 0 10px rgba(255,215,0,0.3); }
+    100% { text-shadow: 0 0 18px rgba(255,215,0,0.6); }
+}
+
+header p {
+    position: relative;
+    font-size: 1.25rem;
+    margin-top: 10px;
+    opacity: 0.95;
+    z-index: 2;
+    animation: fadeUpLite 1.2s ease-out;
+}
+
+@keyframes fadeUpLite {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ----------------------------------------------------
+   NAVBAR
+---------------------------------------------------- */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: rgba(255,255,255,0.08);
+    padding: 12px 0;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+}
+
+nav a {
+    color: var(--putih);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    transition: 0.25s ease;
+}
+
+nav a:hover {
+    background: var(--emas);
+    color: var(--hitam);
+}
+
+/* ----------------------------------------------------
+   CARD
+---------------------------------------------------- */
+.container {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 330px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    padding: 20px;
+    border: 2px solid var(--emas);
+    backdrop-filter: blur(6px);
+
+    animation: fadeCardLite 1.4s ease-in;
+    transition: 0.25s ease;
+    color: var(--putih);
+    box-shadow: 0 0 15px rgba(255,215,0,0.15);
+}
+
+@keyframes fadeCardLite {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 22px rgba(255,215,0,0.5);
+}
+
+.card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 3px solid var(--emas);
+    transition: 0.3s ease;
+}
+
+.card-img:hover {
+    transform: scale(1.03);
+}
+
+.card h2 {
+    margin-top: 15px;
+    font-size: 1.8rem;
+    color: var(--putih);
+}
+
+.card p {
+    margin: 10px 0;
+    opacity: 0.9;
+}
+
+/* ----------------------------------------------------
+   FOOTER
+---------------------------------------------------- */
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    opacity: 0.85;
+    color: var(--putih);
+}
+
+/* Gambar tidak diubah ukurannya */
+.img {
+    width: 100%;
+    max-width: 550px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+X
+
